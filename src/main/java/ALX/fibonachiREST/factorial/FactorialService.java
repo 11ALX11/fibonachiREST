@@ -11,7 +11,7 @@ public class FactorialService {
     /**
      * @param n a natural number
      * @return a list of first n factorials
-     * @throws IllegalArgumentException if n <= 0
+     * @throws IllegalArgumentException if n <= 0 or calculated factorial too big
      */
     public static List<Long> getFactorials(int n) throws IllegalArgumentException {
         if (n <= 0) {
@@ -25,6 +25,10 @@ public class FactorialService {
         for (int i = 1; i <= n; i++) {
             factorial *= i;
             factorials.add(factorial);
+
+            if (factorial < 0) {
+                throw new IllegalArgumentException("Factorial is too big.");
+            }
         }
 
         return factorials;

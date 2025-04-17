@@ -11,7 +11,7 @@ public class FibonacciService {
     /**
      * @param n a natural number
      * @return a list of first n fibonacci numbers
-     * @throws IllegalArgumentException if n <= 0
+     * @throws IllegalArgumentException if n <= 0 or calculated number too big
      */
     public static List<Long> getFibonacci(int n) throws IllegalArgumentException {
         if (n <= 0) {
@@ -26,6 +26,10 @@ public class FibonacciService {
             long next = a + b;
             a = b;
             b = next;
+
+            if (a < 0) {
+                throw new IllegalArgumentException("Fibonacci number is too big.");
+            }
         }
         return fibonacciNumbers;
     }
