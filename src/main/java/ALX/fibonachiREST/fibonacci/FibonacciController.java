@@ -16,6 +16,6 @@ public class FibonacciController {
 
     @GetMapping("/fibonacci/{n}")
     public List<Long> getFibonacci(@PathVariable int n) {
-        return fibonacciService.getFibonacci(n);
+        return FibonacciService.getFibonacci(n);
     }
 }

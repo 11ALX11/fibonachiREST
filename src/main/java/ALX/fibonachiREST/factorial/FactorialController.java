@@ -16,6 +16,6 @@ public class FactorialController {
 
     @GetMapping("/factorial/{n}")
     public List<Long> getFactorials(@PathVariable int n) {
-        return factorialService.getFactorials(n);
+        return FactorialService.getFactorials(n);
     }
 }
